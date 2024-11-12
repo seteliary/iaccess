@@ -42,7 +42,10 @@
     .features-cards,
     .row,
     .column,
-    .feature-image-and-title {
+    .feature-image-and-title,
+    .use-cases,
+    .contact,
+    .contact-text {
       display: flex;
     }
 
@@ -52,7 +55,8 @@
     .challenge-card,
     .how-it-works-card,
     .content,
-    .column {
+    .column,
+    .use-cases {
       flex-direction: column;
     }
 
@@ -200,7 +204,7 @@
     .challenge-title-main,
     .how-it-works-title-main,
     .features-title-main,
-    .use-cases-title-main {
+    .contact-title-main {
       font-size: 80px;
       margin-bottom: 40px;
     }
@@ -289,12 +293,13 @@
 
     .how-it-works,
     .solution,
-    .features {
+    .features,
+    .contact {
       padding: 80px 0;
     }
 
     .features-card {
-      border: 3px solid black;
+      border: 3px solid #000;
       padding: 24px;
       border-radius: 16px;
     }
@@ -317,6 +322,46 @@
 
     .features-icon-small {
       width: 70px;
+    }
+
+    .use-cases {
+      gap: 24px;
+      margin-bottom: 160px;
+    }
+
+    .use-cases-card {
+      padding: 24px;
+      background-color: #000;
+      color: #fff;
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .use-cases-big-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .contact {
+      background-color: #000;
+      color: #fff;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-heart-image {
+      width: 80px;
+    }
+
+    .contact-text {
+      align-items: center;
+      gap: 32px;
     }
   </style>
 </head>
@@ -485,6 +530,29 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="use-cases container">
+        <h2 class="use-cases-title-main">Casos de uso</h2>
+        <div class="use-cases-card"><span><span class="use-cases-big-title">Atendimento a clientes:</span> proporciona
+            um atendimento rápido e eficiente aos
+            clientes</span></div>
+        <div class="use-cases-card"><span><span class="use-cases-big-title">Auto-serviço:</span> permite que os clientes
+            resolvam problemas simples sem
+            ajuda</span></div>
+        <div class="use-cases-card"><span><span><span class="use-cases-big-title">Suporte interno:</span> ferramentas
+              para ajudar os funcionários a resolverem
+              problemas</span></div>
+      </div>
+      <div class="contact">
+        <div class="container">
+          <h2 class="contact-title-main">Contato</h2>
+          <div class="contact-text"><img src="images/heart.png" alt="Imagem" class="contact-heart-image">
+            <p>Dúvidas? Entre em contato com a
+              nossa equipe! Estamos prontos
+              para tirar todas as suas dúvidas e ajudá-lo no que for preciso. Basta enviar um e-mail para <a
+                href="mailto:iac@dngx.com.br">iac@dngx.com.br</a></p>
           </div>
         </div>
       </div>
