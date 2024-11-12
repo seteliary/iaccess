@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+  <title>i.Access - Consultas em Sistemas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    main,
+    .hero,
+    .cta,
+    .logo-title,
+    .hero-left-side,
+    .challenge-card,
+    .challenge-cards,
+    .how-it-works-card,
+    .how-it-works-cards,
+    .content,
+    header .container,
+    .solution,
+    .how-it-works,
+    .features-cards,
+    .row,
+    .column,
+    .feature-image-and-title {
+      display: flex;
+    }
+
+    main,
+    .cta,
+    .hero-left-side,
+    .challenge-card,
+    .how-it-works-card,
+    .content,
+    .column {
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1360px;
+      width: 100%;
+    }
+
+    header .container {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      color: #fff;
+      padding: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    .logo-title {
+      align-items: center;
+    }
+
+    .logo {
+      width: 48px;
+      margin-right: 16px;
+    }
+
+    main {
+      align-items: center;
+    }
+
+    .content,
+    .how-it-works {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      background-color: #000;
+      color: #fff;
+      border-radius: 24px;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 32px 120px 0;
+      gap: 80px;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .cta {
+      font-size: 24px;
+      line-height: 40px;
+    }
+
+    .hero-left-side {
+      padding-bottom: 32px;
+      gap: 16px;
+    }
+
+    .phone-image {
+      height: 350px;
+    }
+
+    button.get-to-know,
+    button.login {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    button.get-to-know {
+      width: 300px;
+    }
+
+    button.login {
+      width: 100px;
+    }
+
+    .svg {
+      width: 16px;
+    }
+
+    .challenge-card,
+    .how-it-works-card {
+      background-color: #000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      gap: 40px;
+      border-radius: 16px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .challenge-card {
+      width: 400px;
+      height: 450px;
+    }
+
+    .challenge-cards,
+    .how-it-works-cards {
+      justify-content: space-between;
+    }
+
+    .challenge-title,
+    .how-it-works-title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .challenge-image,
+    .how-it-works-robot,
+    .how-it-works-language,
+    .how-it-works-cloud,
+    .how-it-works-results {
+      width: 200px;
+    }
+
+    .challenge-puzzle,
+    .how-it-works-puzzle {
+      width: 130px;
+    }
+
+    .challenge-custom,
+    .how-it-works-custom {
+      width: 100px;
+    }
+
+    .challenge-title-main,
+    .how-it-works-title-main,
+    .features-title-main,
+    .use-cases-title-main {
+      font-size: 80px;
+      margin-bottom: 40px;
+    }
+
+    .challenge {
+      margin-bottom: 80px;
+    }
+
+    .solution {
+      background-color: #000;
+      color: #fff;
+      width: 99vw;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .solution .container {
+      display: flex;
+      gap: 120px;
+    }
+
+    .solution .container img {
+      width: 300px;
+    }
+
+    .robot-image {
+      width: 500px;
+    }
+
+    .how-it-works {
+      background-color: #000;
+      width: 99vw;
+      color: #fff;
+    }
+
+    .how-it-works-cards {
+      flex-wrap: wrap;
+    }
+
+    .how-it-works-card {
+      background-color: #fff;
+      color: #000;
+      width: 300px;
+      height: 650px;
+    }
+
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Ajuste conforme necessário */
+    }
+
+    .phrase {
+      display: inline-block;
+      position: absolute;
+      white-space: nowrap;
+      animation: marquee 14s linear infinite;
+      font-family: "Kode Mono", monospace;
+      font-size: 48px;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .features-cards {
+      gap: 24px;
+    }
+
+    .row,
+    .column {
+      gap: 24px;
+    }
+
+    .how-it-works,
+    .solution,
+    .features {
+      padding: 80px 0;
+    }
+
+    .features-card {
+      border: 3px solid black;
+      padding: 24px;
+      border-radius: 16px;
+    }
+
+    .features-title {
+      font-size: 24px;
+    }
+
+    .feature-image-and-title {
+      align-items: center;
+      gap: 24px;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .features-icon {
+      width: 100px;
+      height: 100%;
+    }
+
+    .features-icon-small {
+      width: 70px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-title">
+        <img src="images/logo.png" alt="Logo I.Access" class="logo">
+        <h1>I.Access</h1>
+      </div>
+      <button class="login">Login</button>
+    </div>
+  </header>
+  <main>
+    <div class="hero container">
+      <div class="hero-left-side">
+        <div class="cta">
+          <h2>i.Access significa consultas</h2>
+          <span>mais rápidas</span>
+          <span>mais fáceis</span>
+          <span>mais precisas</span>
+        </div>
+        <button class="get-to-know"><span>Conheça nosso produto</span><svg class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z" />
+          </svg></button>
+        <div class="intro">
+          <p>A DNGX Consultoria, líder em inovação e transformação digital, desenvolveu uma solução revolucionária para
+            consultas em sistemas. Ela se baseia em Inteligência Artificial generativa e permite consultas rápidas e
+            precisas em sistemas complexos, possibilitando que sua empresa gere insights valiosos e aumente a
+            produtividade, entregando mais resultados.</p>
+        </div>
+      </div>
+      <img src="images/phone.png" alt="Pessoa segurando celular" class="phone-image">
+    </div>
+    <div class="content">
+      <div class="challenge container">
+        <h2 class="challenge-title-main">O desafio</h2>
+        <div class="challenge-cards">
+          <div class="challenge-card">
+            <span class="challenge-title">Consultas manuais</span>
+            <img src="images/difficult.png" alt="Imagem" class="challenge-image">
+            <p>Consultas precisam ser feitas manualmente campo a campo, o que demanda muito tempo e esforço</p>
+          </div>
+          <div class="challenge-card">
+            <span class="challenge-title">Limitação de campos</span>
+            <img src="images/puzzle.png" alt="Imagem" class="challenge-puzzle">
+            <p>Consultas ficam limitadas a poucos campos, dificultando análises mais profundas e limitando a extração de
+              insights preciosos</p>
+          </div>
+          <div class="challenge-card">
+            <span class="challenge-title">Dificuldade de customização</span>
+            <img src="images/edit.png" alt="Imagem" class="challenge-custom">
+            <p>Consultas pré-definidas têm pouca flexibilidade para customização de acordo com necessidades específicas
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="solution">
+        <div class="container">
+          <div>
+            <h2 class="challenge-title-main">A solução</h2>
+            <p>Nossa solução baseada em IA generativa mapeia entidades ou documentos do seu sistema
+              atual. Mapeamos
+              tabelas,
+              funções ou processos de sua base de conhecimento GeneXus e disponibilizamos os dados para consultas
+              interativas baseadas em chat ou relatórios</p>
+            <p>Desenvolvemos um chatbot (assistente virtual) que permite consultas em linguagem natural à base de dados
+              ou
+              documentos em diversos formatos, tudo isso em uma única interface simples.</p>
+          </div>
+          <img src="images/ia.png" alt="Robô">
+        </div>
+      </div>
+      <div class="marquee">
+        <span class="phrase">Explore o potencial máximo de sua empresa</span>
+      </div>
+      <div class="how-it-works">
+        <div class="container">
+          <h2 class="how-it-works-title-main">Como funciona?</h2>
+          <div class="how-it-works-cards">
+            <div class="how-it-works-card">
+              <span class="how-it-works-title">Módulo GeneXus exclusivo da DNGX Consultoria</span>
+              <img src="images/robot.png" alt="Imagem" class="how-it-works-robot">
+              <p>Incorporamos em sua base de conhecimento um módulo que permite interagir com duas das maiores
+                inteligências artificiais disponíveis no mercado: ChatGPT (OpenAI) ou Gemini (Google)</p>
+            </div>
+            <div class="how-it-works-card">
+              <span class="how-it-works-title">Mapeamento de entidades ou documentos</span>
+              <img src="images/cloud.png" alt="Imagem" class="how-it-works-cloud">
+              <p>Indicamos ao módulo quais tabelas, procedimentos ou documentos poderão ser consultados. Esse mapeamento
+                é totalmente customizável, permitindo que sua empresa defina exatamente quais áreas de dados serão
+                incluídas nas consultas.</p>
+            </div>
+            <div class="how-it-works-card">
+              <span class="how-it-works-title">Entendimento de linguagem natural</span>
+              <img src="images/language.png" alt="Imagem" class="how-it-works-language">
+              <p>O usuário utiliza uma única interface para realizar consultas em linguagem natural. Não é
+                necessário utilizar termos técnicos ou comandos complexos — basta descrever o que deseja em linguagem
+                comum, e o sistema interpretará a intenção da consulta!
+              </p>
+            </div>
+            <div class="how-it-works-card">
+              <span class="how-it-works-title">Respostas e insights</span>
+              <img src="images/results.png" alt="Imagem" class="how-it-works-results">
+              <p>Saída das informações no próprio chat, em grids, relatórios PDF, Excel e outros. O sistema é capaz de
+                analisar o contexto da pergunta, fornecendo
+                respostas mais relevantes e completas, permitindo que você e sua equipe gerem insights preciosos
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <div class="container">
+          <h2 class="features-title-main">Funcionalidades</h2>
+          <div class="features-cards">
+            <div class="column">
+              <div class="row">
+                <div class="features-card">
+                  <div class="feature-image-and-title"><span class="features-title">Consulta a documentos</span><img
+                      src="images/language2.png" alt="Ícone" class="features-icon"></div>
+                  <p>Realize buscas por qualquer conteúdo usando a linguagem do dia a dia, sem complicação.</p>
+                </div>
+                <div class="features-card">
+                  <div class="feature-image-and-title"><span class="features-title">Monitoramento em tempo
+                      real</span><img src="images/search.png" alt="Ícone" class="features-icon-small"></div>
+                  <p>Acompanhe todas as consultas, controle custos e entenda melhor as intenções dos usuários para
+                    otimizar
+                    seu uso.</p>
+                </div>
+              </div>
+              <div class="features-card ocr">
+                <div class="feature-image-and-title"><span class="features-title">Leitura inteligente de
+                    imagens</span><img src="images/image.png" alt="Ícone" class="features-icon-small"></div>
+                <p>Carregue qualquer imagem, como cupons fiscais, e extraia informações automaticamente com a tecnologia
+                  OCR
+                  (Reconhecimento Óptico de Caracteres).</p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="features-card security">
+                <div class="feature-image-and-title"><span class="features-title">Segurança máxima</span><img
+                    src="images/security.png" alt="Ícone" class="features-icon"></div>
+                <p>Sua base de dados é totalmente privada e segura. As informações não trafegam pelos provedores de
+                  Inteligência Artificial, garantindo total proteção e confidencialidade.
+                </p>
+              </div>
+              <div class="row">
+                <div class="features-card">
+                  <div class="feature-image-and-title"><span class="features-title">Chat inteligente</span><img
+                      src="images/puzzles.png" alt="Ícone" class="features-icon"></div>
+                  <p>Transforme seus dados em uma conversa dinâmica. Faça perguntas em linguagem natural e obtenha
+                    respostas
+                    precisas e personalizadas.</p>
+                </div>
+                <div class="features-card">
+                  <div class="feature-image-and-title"><span class="features-title">Consultas avançadas</span><img
+                      src="images/rubix.png" alt="Ícone" class="features-icon"></div>
+                  <p>Consultas instantâneas a qualquer dado dos seus sistemas. Organize, catalogue e acesse facilmente
+                    sempre
+                    que precisar.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+
+</html>
