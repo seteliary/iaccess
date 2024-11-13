@@ -13,6 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
   <title>i.Access - Consultas em Sistemas</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -26,10 +30,13 @@
       font-family: "Montserrat", sans-serif;
     }
 
+    a {
+      color: #000;
+    }
+
     main,
     .hero,
     .cta,
-    .logo-title,
     .hero-left-side,
     .challenge-card,
     .challenge-cards,
@@ -85,13 +92,13 @@
       line-height: 28px;
     }
 
-    .logo-title {
-      align-items: center;
-    }
-
     .logo {
       width: 48px;
       margin-right: 16px;
+    }
+
+    .logo2 {
+      width: 150px;
     }
 
     main {
@@ -123,7 +130,7 @@
 
     .hero-left-side {
       padding-bottom: 32px;
-      gap: 16px;
+      gap: 32px;
     }
 
     .phone-image {
@@ -145,14 +152,36 @@
 
     button.get-to-know {
       width: 300px;
+      background-image: url('images/nebulosa.jpg');
+      background-size: cover;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: "Kode Mono", monospace;
+      transition: 0.3s ease-in-out;
+    }
+
+    button.get-to-know:hover {
+      opacity: 0.8;
+    }
+
+    button.login:hover {
+      background-color: #0B1B30;
+      color: #fff;
     }
 
     button.login {
       width: 100px;
+      height: 40px;
+      transition: 0.2s ease-in-out;
+      text-transform: uppercase;
+      font-family: "Kode Mono", monospace;
+      font-weight: bold;
     }
 
-    .svg {
-      width: 16px;
+    .get-to-know svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
     }
 
     .challenge-card,
@@ -325,7 +354,7 @@
 
     .use-cases {
       gap: 24px;
-      margin-bottom: 160px;
+      margin-bottom: 120px;
     }
 
     .use-cases-card {
@@ -445,10 +474,7 @@
 <body>
   <header>
     <div class="container">
-      <div class="logo-title">
-        <img src="images/logo.png" alt="Logo I.Access" class="logo">
-        <h1>I.Access</h1>
-      </div>
+      <img src="images/logo2.png" alt="Logo i.Access" class="logo2">
       <button class="login">Login</button>
     </div>
   </header>
@@ -461,17 +487,16 @@
           <span>mais fáceis</span>
           <span>mais precisas</span>
         </div>
-        <button class="get-to-know"><span>Conheça nosso produto</span><svg class="svg"
+        <button class="get-to-know"><a href="#how-it-works">Conheça nosso produto</a><svg class="svg"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
             <path
               d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z" />
           </svg></button>
         <div class="intro">
-          <p>A DNGX Consultoria, líder em inovação e transformação digital, desenvolveu uma solução revolucionária para
-            consultas em sistemas. Ela se baseia em Inteligência Artificial generativa e permite consultas rápidas e
-            precisas em sistemas complexos, possibilitando que sua empresa gere insights valiosos e aumente a
-            produtividade, entregando mais resultados.</p>
+          <p>A DNGX Consultoria desenvolveu uma solução inovadora baseada em Inteligência Artificial generativa que
+            permite consultas rápidas e precisas em sistemas complexos, gerando insights valiosos e aumentando a
+            produtividade das empresas.</p>
         </div>
       </div>
       <img src="images/phone.png" alt="Pessoa segurando celular" class="phone-image">
@@ -518,7 +543,7 @@
       <div class="marquee">
         <span class="phrase">Explore o potencial máximo de sua empresa</span>
       </div>
-      <div class="how-it-works">
+      <div class="how-it-works" id="how-it-works">
         <div class="container">
           <h2 class="how-it-works-title-main">Como funciona?</h2>
           <div class="how-it-works-cards">
