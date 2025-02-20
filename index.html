@@ -29,6 +29,7 @@
       flex-direction: column;
       align-items: center;
       font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
     }
 
     a {
@@ -397,6 +398,45 @@
       font-weight: bold;
     }
 
+    footer {
+      padding: 24px 0;
+    }
+
+    .whatsapp-logo {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background-color: #31ba45;
+      padding: 12px 12px 8px 12px;
+      border-radius: 50%;
+      animation: shake-animation 9s infinite;
+    }
+
+    .whatsapp-logo img {
+      width: 35px;
+    }
+
+    @keyframes shake-animation {
+
+      0%,
+      22.22% {
+        transform: translateY(0);
+        /* Ponto inicial e final da animação */
+      }
+
+      5%,
+      15% {
+        transform: translateY(-6px);
+        /* Movimenta rapidamente para a esquerda */
+      }
+
+      10%,
+      20% {
+        transform: translateY(6px);
+        /* Movimenta rapidamente para a direita */
+      }
+    }
+
     @media (min-width: 320px) and (max-width: 820px) {
       .container {
         width: 100%;
@@ -480,7 +520,7 @@
   <header>
     <div class="container">
       <img src="images/logo2.png" alt="Logo i.Access" class="logo2">
-      <button class="login">Login</button>
+      <button href="https://ai.dngx.com.br/login.aspx" class="login login-button">Login</button>
     </div>
   </header>
   <main>
@@ -663,11 +703,44 @@
             <p>Dúvidas? Entre em contato com a
               nossa equipe! Estamos prontos
               para tirar todas as suas dúvidas e ajudá-lo no que for preciso. Basta enviar um e-mail para <a
-                href="mailto:iac@dngx.com.br">iac@dngx.com.br</a></p>
+                href="mailto:iac@dngx.com.br">iac@dngx.com.br</a> ou para o
+              nosso número, <a href="tel:+5511933461305">(11) 93346-1305</a>. Você também pode clicar no ícone do
+              WhatsApp no canto inferior direito
+              para ser diretamente levado à uma conversa com nossos profissionais.ou clicar no ícone do WhatsApp no
+              canto inferior
+              direito
+              para ser diretamente levado à uma conversa com nossos profissionais.</p>
           </div>
         </div>
       </div>
   </main>
+  <footer>
+    <span>© 2024 i.Access. Todos os direitos reservados.</span>
+  </footer>
+  <a href="https://wa.me/+5511933461305/?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20i.Access." target="_blank"
+    class="whatsapp-logo"><img src="images/whatsapp.png" alt="Fale conosco!"></a>
 </body>
+
+<script>
+  // Espera o carregamento do conteúdo
+  document.addEventListener('DOMContentLoaded', function () {
+    // Seleciona o botão
+    const loginButton = document.querySelector('.login-button');
+
+    // Adiciona o ouvinte de evento de clique no botão
+    loginButton.addEventListener('click', function () {
+      // Verifica a URL atual
+      const currentUrl = window.location.href;
+
+      // Se a URL contiver "hom", redireciona para o URL "hom.spothub"
+      if (currentUrl.includes("hom")) {
+        window.location.href = "https://hom.ai.dngx.com.br/login.aspx";
+      } else {
+        // Caso contrário, redireciona para o URL padrão
+        window.location.href = "https://ai.dngx.com.br/login.aspx";
+      }
+    });
+  });
+</script>
 
 </html>
